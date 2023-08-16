@@ -14,14 +14,7 @@ rollout rendrableOBJ "makeObjectRenderable" width:162 height:78
 
 	mapped function setObjectRenderable obj state =
 	(
-		if state then 
-		(
-			obj.renderable = state
-		)
-		else 
-		(
-			obj.renderable = state
-		)
+		obj.renderable = state
 	)
 
 	on btn1 pressed do
