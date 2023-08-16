@@ -54,10 +54,8 @@ CLS
  setlocal & cd /d %~dp0
  if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
 
-REM START
+REM ::::START::::
 REM THE CODE HERE
-
-SET "CURPATH=%~dp0"
 
 SET LEGLIB=LegionLib_Release.dll
 SET SCATERLIB=ScatterCore.ForScatter_Release.dll
