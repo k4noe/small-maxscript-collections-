@@ -1,6 +1,11 @@
 @echo off
 setlocal ENABLEDELAYEDEXPANSION
 
+REM This script need WINRAR to work , please install it first
+REM This script just backup all sketchup extension and rar them in neat place
+REM just execute them 
+
+
 :: BatchGotAdmin
 :-------------------------------------
 REM  --> Check for permissions
