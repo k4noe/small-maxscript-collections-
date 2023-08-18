@@ -54,7 +54,7 @@ struct rotateTools
 				)
 			
 			-- not group member dan bukan open group member
-			(not (isGroupMember sel)) :
+			(not (isGroupMember sel) and (not (isOpenGroupMember sel))) :
 				(
 					rot sel rotAngle
 				)
