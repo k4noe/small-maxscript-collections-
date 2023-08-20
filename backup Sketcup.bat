@@ -34,8 +34,8 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------    
-
-SET ver=2022
+rem change 2022 to your skp version
+SET ver=2022 
 title Sketchup %ver% Backuper
 SET "local=%LOCALAPPDATA%\SketchUp\SketchUp %ver%\SketchUp"
 SET "roaming=%APPDATA%\SketchUp\SketchUp %ver%\SketchUp"
