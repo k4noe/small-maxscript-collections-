@@ -41,16 +41,16 @@ rollout setOUTValueRGB "SME Tools" width:162 height:136
 		
 	fn getSMESelectedParent ints = 
 	(
-		nodes = thisSlateNode ints
-		depend= refs.dependents nodes
-		slate =  getActiveView()
+		local nodes = thisSlateNode ints
+		local depend= refs.dependents nodes
+		local slate =  getActiveView()
 		xx = for i in depend where (p = slate.getnodebyref i)!=undefined collect p.reference
 		xx --return as array
 	)
 	
 	fn ConvertBitmapToVrayBitmap  = 
 	(
-		nodesCol = getSlateNode()	
+		local nodesCol = getSlateNode()	
 		if (nodesCol.count!=0) do 
 		(
 			for h=1 to nodesCol.count do
