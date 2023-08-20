@@ -1,3 +1,6 @@
+
+--SME edit RGB LEVEL , COORD W angle of any text that has coord and output prop, and Convert anybitmap to VrayBitmap
+
 try (DestroyDialog setOUTValueRGB) catch()
 
 rollout setOUTValueRGB "SME Tools" width:162 height:136
