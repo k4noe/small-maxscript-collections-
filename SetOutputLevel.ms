@@ -1,5 +1,5 @@
 
---SME edit RGB LEVEL , COORD W angle of any text that has coord and output prop, and Convert anybitmap to VrayBitmap
+--SME edit selected node RGB LEVEL , COORD W angle of any texture that has coord and output prop, and Convert anybitmap to VrayBitmap
 
 try (DestroyDialog setOUTValueRGB) catch()
 
