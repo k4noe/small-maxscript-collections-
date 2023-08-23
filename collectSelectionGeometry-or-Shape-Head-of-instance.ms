@@ -3,7 +3,6 @@ clearlistener()
 mapped fn collectClassInstance sel &inst =
 (
 	for j in (getClassInstances (classOf sel)) do appendIfUnique inst j 
-		
 )
 
 fn getHeadOfInstance sel = 
