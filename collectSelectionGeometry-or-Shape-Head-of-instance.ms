@@ -18,3 +18,6 @@ fn getHeadOfInstance sel =
 	)
 	trueNode
 )
+
+--ex: 
+select (getHeadOfInstance (selection))
