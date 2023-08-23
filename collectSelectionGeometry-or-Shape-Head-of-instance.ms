@@ -10,10 +10,10 @@ fn collectClassInstance sel  =
 	x
 )
 
-fn getHeadOfInstance nodes = 
+fn getHeadOfInstance sel = 
 (
 	local trueNode  = #()
-	local arr = collectClassInstance nodes 
+	local arr = collectClassInstance sel 
 
 	for x=1 to arr.count do 
 	(
