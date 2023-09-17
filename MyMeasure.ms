@@ -34,7 +34,7 @@ rollout distanceMod "Distance" width:126 height:172
 		
 		for i=1 to list.count do 
 		(
-			_snapIdx =  list[i]
+			local _snapIdx =  list[i]
 			for j=1 to _snapIdx do 
 			(
 				if (snapMode.getOSnapItemActive i j) do 
@@ -52,7 +52,7 @@ rollout distanceMod "Distance" width:126 height:172
 		
 		for i=1 to list.count do --2
 		(
-			_snapIdx =  list[i] --10
+			local _snapIdx =  list[i] --10
 			for j=1 to _snapIdx do 
 			(
 				snapmode.setOSnapItemActive i j state
@@ -92,9 +92,7 @@ rollout distanceMod "Distance" width:126 height:172
 		activateSnapFromDict state:true dictArr:previousActiveSnap 
 		dist
 	)
-		
-	
-	
+
 	fn zoomIt = 
 	(
 		local pts,prevGridProp,objProperties
@@ -111,7 +109,6 @@ rollout distanceMod "Distance" width:126 height:172
 		with undo off (if isValidNode pts do (delete pts) )
 	)
 	
-	
 	on lbx1 doubleClicked itm do
 	(
 		if ((p=lbx1.selected) !=undefined ) do
@@ -120,6 +117,7 @@ rollout distanceMod "Distance" width:126 height:172
 		)
 		
 	)
+
 	on btn1 pressed do
 	(
 		local arr = lbx1.items 
@@ -127,6 +125,7 @@ rollout distanceMod "Distance" width:126 height:172
 		lbx1.items = arr
 		lbx1.selection = lbx1.items.count
 	)
+
 	on btn2 pressed do
 	(
 		lbx1.items= #()
