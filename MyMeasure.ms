@@ -1,11 +1,12 @@
 try (destroyDialog distanceMod) catch()
-rollout distanceMod "Distance" width:218 height:160
+rollout distanceMod "Distance" width:126 height:172
 (
-	listBox 'lbx1' "Measure History" pos:[6,7] width:200 height:7 align:#left
-	button 'btn1' "Measure" pos:[6,130] width:100 height:25 align:#left
-	button 'btn2' "Clear" pos:[108,130] width:100 height:25 align:#left
+	listbox 'lbx1' "Measure History" pos:[6,7] width:113 height:7 align:#left
+	button 'btn1' "Measure" pos:[7,130] width:56 height:19 align:#left
+	button 'btn2' "Clear" pos:[63,130] width:56 height:19 align:#left
+	button 'btn3' "Zoom it!" pos:[7,151] width:111 height:19 align:#left
 	
-	local snapList= #(5,10,1,2,2,2,6)
+	local snapList= #(5,10,1,2,2,2,6)--snap list number with each sections
 	
 	fn setSnapMode name: state: =
 	(
@@ -92,19 +93,26 @@ rollout distanceMod "Distance" width:218 height:160
 		dist
 	)
 		
-	on btn1 pressed do
+	
+	
+	fn zoomIt = 
 	(
-		local arr = lbx1.items 
-		local res = append arr (startMeasure() as string)
-		lbx1.items = arr
+		local pts,prevGridProp,objProperties
+
+		prevGridProp=maxOps.autoGrid 
+		maxOps.autoGrid = true 
+		
+		pts = startObjectCreation point box:true size:2000 returnNewNodes:#first  --newNodeCallback:objProperties
+		max zoomext sel
+
+		StopCreating()
+
+		maxOps.autoGrid = prevGridProp
+		with undo off (if isValidNode pts do (delete pts) )
 	)
 	
-	on btn2 pressed do 
-	(
-		lbx1.items= #()
-	)
 	
-	on lbx1 doubleClicked itm do 
+	on lbx1 doubleClicked itm do
 	(
 		if ((p=lbx1.selected) !=undefined ) do
 		(
@@ -112,7 +120,22 @@ rollout distanceMod "Distance" width:218 height:160
 		)
 		
 	)
+	on btn1 pressed do
+	(
+		local arr = lbx1.items 
+		local res = append arr (startMeasure() as string)
+		lbx1.items = arr
+		lbx1.selection = lbx1.items.count
+	)
+	on btn2 pressed do
+	(
+		lbx1.items= #()
+	)
 	
+	on btn3 pressed do 
+	(
+		zoomIt()
+	)
 )
 
 createDialog distanceMod
